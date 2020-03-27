@@ -1,8 +1,11 @@
 const mongoose = require("mongoose");
 
+const MONGO_URI =
+  "mongodb+srv://lykalabrada:lyka123@labrada-ispm2.mongodb.net/expense-tracker?retryWrites=true&w=majority";
+
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
+    const conn = await mongoose.connect(MONGO_URI, {
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true
