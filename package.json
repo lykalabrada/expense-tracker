@@ -1,13 +1,14 @@
 {
   "name": "expense-tracker",
   "version": "1.0.0",
-  "description": "Backend server",
+  "description": "Backend server API for expense tracker",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
+    "start": "node server.js",
     "server": "nodemon server",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\" "
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
@@ -29,5 +30,9 @@
   "devDependencies": {
     "concurrently": "^5.1.0",
     "nodemon": "^2.0.2"
+  },
+  "engines": {
+    "node": "11.11.0",
+    "npm": "6.7.0"
   }
 }
