@@ -1,14 +1,19 @@
 import React, { useContext, useEffect } from "react";
 import { Transaction } from "./Transaction";
+import { Spinner } from "./Spinner";
 
 import { GlobalContext } from "../context/GlobalState";
 
 export const TransactionList = () => {
-  const { getTransactions, transactions } = useContext(GlobalContext);
+  const { loading, getTransactions, transactions } = useContext(GlobalContext);
 
   useEffect(() => {
     getTransactions();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <>
