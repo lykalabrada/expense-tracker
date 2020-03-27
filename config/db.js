@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const MONGO_URI =
-  "mongodb+srv://lykalabrada:lyka123@labrada-ispm2.mongodb.net/expense-tracker?retryWrites=true&w=majority";
+  "mongodb://admin:password01@ds153609.mlab.com:53609/expense-tracker";
 
 const connectDB = async () => {
   try {
