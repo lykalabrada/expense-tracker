@@ -1,11 +1,8 @@
 const mongoose = require("mongoose");
 
-const MONGO_URI =
-  "mongodb://admin:password01@ds153609.mlab.com:53609/expense-tracker";
-
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(MONGO_URI, {
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true
